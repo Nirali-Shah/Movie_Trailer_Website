@@ -1,2 +1,2 @@
 # Movie_Trailer_Website
-Learning Web Development
+Movie Trailer Website list the latest movie releases. Also, it allows to see movie trailer.
