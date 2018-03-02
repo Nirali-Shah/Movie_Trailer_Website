@@ -23,6 +23,6 @@ Movie Trailer Website list the latest movie releases. Also, it allows to see **m
 ## Demonstration : 
 ![](/movie_poster/ScreenShot.png)
 
-## Developed By :
+## Edited By :
 **Nirali Shah** : For any queries contact at : **[ntshah.it@gmail.com]**
 
