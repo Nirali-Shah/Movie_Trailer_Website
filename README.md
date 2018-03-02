@@ -21,7 +21,7 @@ Movie Trailer Website list the latest movie releases. Also, it allows to see **m
 * Add Review 
 
 ## Demonstration : 
-
+[!alt text](https://github.com/Nirali-Shah/Movie_Website_Trailer/blob/master/movie_poster/ScreenShot.png)
 
 ## Developed By :
 **Nirali Shah** : For any queries contact at : **[ntshah.it@gmail.com]**
