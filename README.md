@@ -7,7 +7,7 @@ Movie Trailer Website list the latest movie releases. Also, it allows to see **m
 * Open _**Movie_Trailer.html**_ in any explorer
 
 ## Features :
-* Movie list
+* Movies list
 * Mouse over any movie will show its **Storyline**
 * Click on any movie to see its **Trailer**
 * Add Review 
