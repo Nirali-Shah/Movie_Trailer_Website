@@ -5,7 +5,8 @@ Movie Trailer Website list the latest movie releases. Also, it allows to see **m
 * Download Movie Trailer Website zip
 * Store Package on C: Drive of local machine
 * Unzip package
-* Open _**Movie_Trailer.html**_ in any explorer
+* Run entertainment_center.py using IDE (Spyder)
+* It will create Movie_Trailer.html to view the webpage
 
 ## Package Includes :
 * Python Files
