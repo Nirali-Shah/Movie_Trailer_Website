@@ -26,3 +26,4 @@ Movie Trailer Website list the latest movie releases. Also, it allows to see **m
 
 ## Developed By :
 **Nirali Shah** : For any queries contact at : **[ntshah.it@gmail.com]**
+
