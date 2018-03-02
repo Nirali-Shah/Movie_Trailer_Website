@@ -1,14 +1,19 @@
+"""
+Tutorial Wed Feb 14 12:32:57 2018
+
+@leraning: Nirali
+"""
 import webbrowser
 import os
-import re #used for regression match
+import re # used for regression match
 
 
-# Styles and scripting for the page
+# Styles and scripting for the Webpage
 main_page_head = '''
 <head>
 	<!-- Meta charset for encoding and metadata for information -->
 	<meta charset="utf8">
-    <meta name="description" content="Free Web tutorials">
+    <meta name="description" content="Movie Listing">
     <meta name="keywords" content="Early Man, Maze Runner The Death Cure, All The Money In The World, Fifty Shades Freed, Father Figures, Peter Rabbit, Trailers, Movies">
     <meta name="author" content="Nirali Shah">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +27,7 @@ main_page_head = '''
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	
-	<!--  internal css -->
+	<!--  internal css None -->
 	<style type = "text/css" media = "screen"></style>
 	
 	<!--  external css & Js -->
@@ -41,6 +46,7 @@ main_page_content = '''
       <div class="modal-dialog">
         <div class="modal-content">
           <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <!-- Close image on Modal -->
             <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
           </a>
           <div class="scale-media" id="trailer-video-container">
@@ -52,14 +58,14 @@ main_page_content = '''
     <!-- Movie review Modal -->
 	
 <!-- Modal -->
-<div id="reviewModal" class="modal fade" role="dialog">
+<div class="modal fade" id="review-modal"  role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Add Review</h4>
+        <h4 class="modal-title">Add Movie Review</h4>
       </div>
       <div class="modal-body">
         <div>
@@ -95,7 +101,7 @@ main_page_content = '''
 		  </ul>
 		  <form class="navbar-form navbar-left" action="/action_page.php">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search" name="Search">
+				<input type="text" class="form-control" placeholder="Search" name="search">
 					<div class="input-group-btn">
 						<button class="btn btn-default" type="submit">
 							<i class="glyphicon glyphicon-search"></i>
@@ -118,12 +124,14 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
         <div class="col-md-4 col-lg-4 text-center">
+                <div class="movie-text text-center">{movie_title}</div>
 						<div class = "movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-							<img class ="frame" src="{poster_image_url}" width="220" height="342">
+                	<a href="#" class = "movie-story-line" data-toggle="tooltip" data-placement="right" title="{movie_storyline}">					
+                 <img class ="movie-frame" src="{poster_image_url}" width="220" height="342">
+                 </a>
 						</div>
-						<div class="movie_text text-center">{movie_title}</div>
-						<div data-toggle="modal" data-target="#reviewModal">
-                  <span class="glyphicon glyphicon-plus reviewRatings">Add Review </span>
+						<div data-toggle="modal" data-target="#review-modal">
+                  <span class="glyphicon glyphicon-plus movie-review-ratings">Add Review </span>
                </div>
         </div>
 '''
@@ -142,6 +150,7 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            movie_storyline=movie.storyline,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )
